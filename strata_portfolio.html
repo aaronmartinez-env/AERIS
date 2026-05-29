@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AERIS — Atmospheric Interpretation System · Valencia</title>
+<title>Strata — Atmospheric Interpretation System · Valencia</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,700;1,300&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400;1,600&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -277,7 +277,7 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
 <body>
 <canvas id="atmos-canvas"></canvas>
 <nav class="nav">
-  <div class="nav-logo">AERIS<span> · AIS</span></div>
+  <div class="nav-logo">Strata<span> · AIS</span></div>
   <div class="nav-links">
     <a href="#s1">Network</a><a href="#s2">Divergence</a><a href="#s3">Diurnal</a>
     <a href="#s4">Drivers</a><a href="#s5">Calima</a><a href="#s6">Complexity</a>
@@ -290,9 +290,9 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
   <div class="hero-status"><div class="sdot"></div><div class="stext">RVVCCA · Valencia · 2021–2022 · Pipeline active</div></div>
   <div class="hero-eyebrow">Atmospheric Interpretation System · Environmental Science Research</div>
   <h1 class="hero-title">Does public AQI accurately represent<br>the <em>real atmosphere</em> of Valencia?</h1>
-  <p class="hero-sub">AERIS is an exploratory atmospheric interpretation framework quantifying divergence between simplified public-facing air quality indices and a custom multi-pollutant composite index, applied to 160,076 hourly observations across Valencia's 12-station RVVCCA network.</p>
+  <p class="hero-sub">Strata is an exploratory atmospheric interpretation framework quantifying divergence between simplified public-facing air quality indices and a custom multi-pollutant composite index, applied to 160,076 hourly observations across Valencia's 12-station RVVCCA network.</p>
   <div class="ticker-wrap">
-    <span class="ticker-pre">AERIS ›</span>
+    <span class="ticker-pre">Strata ›</span>
     <span class="ticker-el" id="ticker-el">Initialising atmospheric interpretation system</span>
     <span class="tcursor"></span>
   </div>
@@ -331,7 +331,7 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
   <div class="ch-head"><div class="ch-num">02</div><div><h2 class="ch-title">The representation <em>gap</em><span class="ch-sub">Custom multi-pollutant composite index vs PM10-only public index</span></h2></div></div>
   <div class="prose">
     <p>Many public-facing AQI representations — including those commonly displayed in weather applications and urban dashboards — simplify atmospheric conditions into <strong>a single dominant pollutant proxy, often emphasising PM10 during particulate episodes</strong>. This simplification carries a structural cost: any atmospheric episode where gas-phase pollutants elevate multi-pollutant burden while particulate matter stays moderate will be systematically underrepresented.</p>
-    <p>AERIS quantifies this as the <strong>CMPI divergence</strong>: the absolute difference between a custom multi-pollutant composite index — a research construct weighting normalised PM2.5 (40%), PM10 (30%), NO₂ (20%), and O₃ (10%) on a 0–100 scale — and the public PM10-only index on the same scale. <em>The CMPI is not a regulatory index; it is an exploratory comparative framework developed for this analysis.</em></p>
+    <p>Strata quantifies this as the <strong>CMPI divergence</strong>: the absolute difference between a custom multi-pollutant composite index — a research construct weighting normalised PM2.5 (40%), PM10 (30%), NO₂ (20%), and O₃ (10%) on a 0–100 scale — and the public PM10-only index on the same scale. <em>The CMPI is not a regulatory index; it is an exploratory comparative framework developed for this analysis.</em></p>
     <p>Across 160,076 valid observations, the <strong>mean divergence is 4.22 index points</strong>. The distribution is strongly right-skewed: the <strong>maximum single-hour gap reaches 50.72 points</strong> — large enough to shift a reading across categorical index bands.</p>
   </div>
   <div class="mrow">
@@ -410,7 +410,7 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
 <section class="chapter reveal" id="s5">
   <div class="ch-head"><div class="ch-num">05</div><div><h2 class="ch-title"><em>Calima</em> — the inversion of the problem<span class="ch-sub">2,591 Saharan dust hours · Dual-criterion detection · 36% public over-reads</span></h2></div></div>
   <div class="prose">
-    <p>AERIS detected <strong>2,591 calima hours</strong> — 1.62% of valid observations — using a dual per-station criterion: PM10 must exceed 1.5 standard deviations above the 72-hour rolling station baseline, <em>and</em> the PM10/PM2.5 ratio must exceed 3.0, characteristic of coarse mineral aerosol transport (Rodríguez et al., 2001; Escudero et al., 2005).</p>
+    <p>Strata detected <strong>2,591 calima hours</strong> — 1.62% of valid observations — using a dual per-station criterion: PM10 must exceed 1.5 standard deviations above the 72-hour rolling station baseline, <em>and</em> the PM10/PM2.5 ratio must exceed 3.0, characteristic of coarse mineral aerosol transport (Rodríguez et al., 2001; Escudero et al., 2005).</p>
     <p>During dust intrusions, PM10 spikes sharply while gas-phase pollutants are not necessarily co-elevated. The public PM10-only index therefore exceeded the CMPI composite in <strong>36% of detected calima hours</strong> — defined here as cases where the public index score was higher than the CMPI score for the same station-hour during a confirmed calima event. Maximum observed hourly PM10 concentration across the network reached <strong>460 µg/m³</strong> — more than ten times the WHO 2021 24-hour guideline of 45 µg/m³ — during peak Saharan intrusion episodes in the 2021–2022 dataset. The public index responds to these events but may not distinguish mineral dust aerosol from combustion aerosol, two types with different compositional profiles in the epidemiological literature.</p>
   </div>
   <div class="mrow">
@@ -450,7 +450,7 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
 <section class="chapter reveal" id="s7">
   <div class="ch-head"><div class="ch-num">07</div><div><h2 class="ch-title"><em>Conclusions</em><span class="ch-sub">Research question · Findings · Implications · Limitations</span></h2></div></div>
   <div class="prose">
-    <p>AERIS set out to ask: <em>how accurately do public AQI representations reflect actual atmospheric conditions in Valencia?</em> Based on 160,076 hourly observations across January 2021 – December 2022, the findings are consistent with <strong>imperfect, episodic representation, concentrated in two structurally distinct failure modes.</strong></p>
+    <p>Strata set out to ask: <em>how accurately do public AQI representations reflect actual atmospheric conditions in Valencia?</em> Based on 160,076 hourly observations across January 2021 – December 2022, the findings are consistent with <strong>imperfect, episodic representation, concentrated in two structurally distinct failure modes.</strong></p>
   </div>
   <div class="cgrid">
     <div class="cb"><div class="cb-label">The gap is real and episodically large</div><p>Mean divergence is <strong>4.22 index points</strong>. The maximum of <strong>50.72 points</strong> shows that during extreme episodes, the single-pollutant representation diverges substantially from the CMPI — a gap large enough to shift categorical index bands. The gap is structured and physically explicable, not random noise.</p></div>
@@ -466,7 +466,7 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
 <!-- 08 CITATIONS -->
 <section class="chapter reveal" id="s8">
   <div class="ch-head"><div class="ch-num">08</div><div><h2 class="ch-title"><em>Citations</em> &amp; methodology<span class="ch-sub">Data source · Pipeline · Index methodology · References · Honest framing</span></h2></div></div>
-  <div class="prose"><p>All data, methodological choices, and interpretive frameworks are documented here for transparency and reproducibility. AERIS is an interpretive analytical framework; it is not an official air quality monitoring system, does not replace regulatory indices, and does not constitute medical or public health guidance.</p></div>
+  <div class="prose"><p>All data, methodological choices, and interpretive frameworks are documented here for transparency and reproducibility. Strata is an interpretive analytical framework; it is not an official air quality monitoring system, does not replace regulatory indices, and does not constitute medical or public health guidance.</p></div>
 
   <div class="cite-grid">
     <div class="cite-block">
@@ -480,11 +480,11 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
       <div class="cite-row"><div class="cite-key">Raw rows</div><div class="cite-val">201,480 × 30 columns</div></div>
     </div>
     <div class="cite-block">
-      <div class="cite-block-label">AERIS pipeline</div>
+      <div class="cite-block-label">Strata pipeline</div>
       <div class="cite-row"><div class="cite-key">Language</div><div class="cite-val">Python 3.12</div></div>
       <div class="cite-row"><div class="cite-key">Core libs</div><div class="cite-val">pandas 3.0 · numpy 2.4 · scipy 1.17 · folium 0.18 · matplotlib 3.9</div></div>
       <div class="cite-row"><div class="cite-key">Spatial</div><div class="cite-val">scipy.interpolate.griddata (cubic) · Leaflet.js · CartoDB basemap</div></div>
-      <div class="cite-row"><div class="cite-key">Source code</div><div class="cite-val"><a href="https://github.com/aaronmartinez-env/aeris">github.com/aaronmartinez-env/aeris</a></div></div>
+      <div class="cite-row"><div class="cite-key">Source code</div><div class="cite-val"><a href="https://github.com/aaronmartinez-env/Strata">github.com/aaronmartinez-env/Strata</a></div></div>
     </div>
   </div>
 
@@ -528,13 +528,13 @@ html.light .ch-num { color: rgba(10,25,40,0.4); }
 
   <div class="cite-block" style="margin:1rem 0">
     <div class="cite-block-label">Scope, limitations &amp; honest framing</div>
-    <p class="mtext">AERIS is an <strong>interpretive analytical framework</strong>. It builds a custom multi-pollutant composite for comparative analysis, quantifies divergence from a simplified public index, detects probable Saharan dust intrusions using heuristic criteria, and communicates atmospheric complexity through an entropy-based index. It does not validate health outcomes, certify toxicological risk, replace official RVVCCA reporting, or establish definitive causal relationships. All Pearson r values describe statistical associations within this dataset and do not establish causation.</p>
+    <p class="mtext">Strata is an <strong>interpretive analytical framework</strong>. It builds a custom multi-pollutant composite for comparative analysis, quantifies divergence from a simplified public index, detects probable Saharan dust intrusions using heuristic criteria, and communicates atmospheric complexity through an entropy-based index. It does not validate health outcomes, certify toxicological risk, replace official RVVCCA reporting, or establish definitive causal relationships. All Pearson r values describe statistical associations within this dataset and do not establish causation.</p>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="footer-col"><strong>AERIS</strong> · Atmospheric Interpretation System · Valencia<br>Data: RVVCCA / Open Data Valencia · CC BY 4.0<br>Pipeline: Python · pandas · scipy · folium<br><strong>All scientific values pipeline-derived · No synthetic data · No manual hardcoding</strong></div>
-  <div class="footer-col" style="text-align:right">Environmental Science Portfolio<br>Valencia, Spain · January 2021 – December 2022<br><a href="https://github.com/aaronmartinez-env/aeris">github.com/aaronmartinez-env/aeris</a></div>
+  <div class="footer-col"><strong>Strata</strong> · Atmospheric Interpretation System · Valencia<br>Data: RVVCCA / Open Data Valencia · CC BY 4.0<br>Pipeline: Python · pandas · scipy · folium<br><strong>All scientific values pipeline-derived · No synthetic data · No manual hardcoding</strong></div>
+  <div class="footer-col" style="text-align:right">Environmental Science Portfolio<br>Valencia, Spain · January 2021 – December 2022<br><a href="https://github.com/aaronmartinez-env/Strata">github.com/aaronmartinez-env/Strata</a></div>
   <div class="footer-col" style="width:100%;border-top:1px solid rgba(255,255,255,0.04);padding-top:0.75rem;margin-top:0.5rem;">
     <span id="provenance-line" style="font-size:0.52rem;color:var(--muted);font-family:var(--mono);">Loading provenance metadata...</span>
   </div>
@@ -548,10 +548,10 @@ Chart.defaults.font.size=10;
 Chart.defaults.font.weight='300';
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
-// __AERIS_DATA_START__
+// __Strata_DATA_START__
 // GENERATED BY inject_findings.py — DO NOT EDIT MANUALLY
 // Source  : RVVCCA · rvvcca_d_horarios_2021-2022
-// Generated: 2026-05-21 22:18 UTC
+// Generated: 2026-05-29 16:17 UTC
 // Pipeline : v1.2.0
 // Rows     : 160,076 valid station-hours
 // Stations : 10
@@ -615,12 +615,12 @@ const HEADLINE={
   min_divergence:2.875,
   intraday_swing:2.4576,
   no2_r:0.3781,
-  generated_at:'2026-05-21 22:18 UTC',
+  generated_at:'2026-05-29 16:17 UTC',
   pipeline_version:'1.2.0',
   date_range:'2021-01-01'+' → '+'2022-12-31',
 };
 
-// __AERIS_DATA_END__
+// __Strata_DATA_END__
 
 // ── ATMOSPHERIC CANVAS ────────────────────────────────────────────────────────
 (function(){
@@ -669,7 +669,7 @@ STATIONS.forEach(st=>{
   const r=8+(st.pm10/35)*5.5;
   const ring=st.calima>220?'box-shadow:0 0 0 3px rgba(255,154,0,0.38),0 0 10px rgba(255,154,0,0.12);':'';
   const icon=L.divIcon({className:'',html:`<div style="width:${r*2}px;height:${r*2}px;border-radius:50%;background:${c};opacity:0.78;${ring}border:1px solid rgba(255,255,255,0.08);cursor:pointer;" onmouseover="this.style.opacity='1';this.style.transform='scale(1.25)'" onmouseout="this.style.opacity='0.78';this.style.transform='scale(1)'"></div>`,iconSize:[r*2,r*2],iconAnchor:[r,r]});
-  L.marker([st.lat,st.lon],{icon}).addTo(map).bindPopup(`<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.95;min-width:175px;color:#c8d8e8;"><div style="font-weight:700;font-size:11px;margin-bottom:5px;color:#00d4ff;letter-spacing:0.05em">${st.station}</div><div style="color:#3a5060">PM10 <span style="color:#c8d8e8;float:right">${st.pm10.toFixed(1)} µg/m³</span></div><div style="color:#3a5060">PM2.5 <span style="color:#c8d8e8;float:right">${st.pm25.toFixed(1)}</span></div><div style="color:#3a5060">NO₂ <span style="color:#c8d8e8;float:right">${st.no2.toFixed(1)}</span></div><div style="color:#3a5060">O₃ <span style="color:#c8d8e8;float:right">${st.o3.toFixed(1)}</span></div><div style="border-top:1px solid rgba(255,255,255,0.05);margin:5px 0;padding-top:5px"><div style="color:#3a5060">CMPI <span style="color:${c};float:right;font-weight:700">${st.aqi_sci.toFixed(1)}</span></div><div style="color:#3a5060">Public <span style="float:right">${st.aqi_public.toFixed(1)}</span></div><div style="color:#3a5060">Gap <span style="color:#ff9a00;float:right">${st.aqi_div.toFixed(2)}</span></div><div style="color:#3a5060">Calima <span style="color:#ff9a00;float:right">${st.calima}h</span></div><div style="color:#3a5060">ACI <span style="color:#39d98a;float:right">${st.aci.toFixed(3)}</span></div></div></div>`,{maxWidth:230,className:'aeris-popup'});
+  L.marker([st.lat,st.lon],{icon}).addTo(map).bindPopup(`<div style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.95;min-width:175px;color:#c8d8e8;"><div style="font-weight:700;font-size:11px;margin-bottom:5px;color:#00d4ff;letter-spacing:0.05em">${st.station}</div><div style="color:#3a5060">PM10 <span style="color:#c8d8e8;float:right">${st.pm10.toFixed(1)} µg/m³</span></div><div style="color:#3a5060">PM2.5 <span style="color:#c8d8e8;float:right">${st.pm25.toFixed(1)}</span></div><div style="color:#3a5060">NO₂ <span style="color:#c8d8e8;float:right">${st.no2.toFixed(1)}</span></div><div style="color:#3a5060">O₃ <span style="color:#c8d8e8;float:right">${st.o3.toFixed(1)}</span></div><div style="border-top:1px solid rgba(255,255,255,0.05);margin:5px 0;padding-top:5px"><div style="color:#3a5060">CMPI <span style="color:${c};float:right;font-weight:700">${st.aqi_sci.toFixed(1)}</span></div><div style="color:#3a5060">Public <span style="float:right">${st.aqi_public.toFixed(1)}</span></div><div style="color:#3a5060">Gap <span style="color:#ff9a00;float:right">${st.aqi_div.toFixed(2)}</span></div><div style="color:#3a5060">Calima <span style="color:#ff9a00;float:right">${st.calima}h</span></div><div style="color:#3a5060">ACI <span style="color:#39d98a;float:right">${st.aci.toFixed(3)}</span></div></div></div>`,{maxWidth:230,className:'Strata-popup'});
 });
 
 // ── STATION CARDS ─────────────────────────────────────────────────────────────
@@ -770,14 +770,14 @@ new Chart(document.getElementById('chartWind'),{type:'radar',data:{labels:['N','
   const btn = document.getElementById('theme-toggle');
   const html = document.documentElement;
   // Check saved preference
-  if(localStorage.getItem('aeris-theme') === 'light'){
+  if(localStorage.getItem('Strata-theme') === 'light'){
     html.classList.add('light');
     btn.textContent = '◑ Dark';
   }
   btn.addEventListener('click', function(){
     const isLight = html.classList.toggle('light');
     btn.textContent = isLight ? '◑ Dark' : '☀ Light';
-    localStorage.setItem('aeris-theme', isLight ? 'light' : 'dark');
+    localStorage.setItem('Strata-theme', isLight ? 'light' : 'dark');
   });
 })();
 
